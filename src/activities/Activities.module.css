@@ -1,0 +1,52 @@
+.activities-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.activities-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.activities-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.icon-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #0056b3;
+}
+
+.swipeable-views {
+    flex-grow: 1;
+}
+
+.activity-item {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

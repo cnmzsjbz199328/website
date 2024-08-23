@@ -1,0 +1,34 @@
+.weather-container {
+  display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: fit-content;
+  align-items: center;
+}
+
+.weather-container img {
+  width: 100px;  /* 设置图标宽度 */
+  height: 100px; /* 设置图标高度 */
+  object-fit: cover; /* 确保图像填充而不失真 */
+}
+
+.weather-icon {
+  flex: 0 1 auto; /* flex-grow, flex-shrink, flex-basis */
+  margin-right: 20px;
+}
+
+.weather-info {
+  flex: 1;
+  text-align: left;
+}
+
+.weather-container h2 {
+  color: #333;
+}
+
+.weather-container p {
+  color: #fff;
+  font-size: 20px;
+}

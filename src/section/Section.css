@@ -1,0 +1,75 @@
+.section {
+  display: flex;
+  flex-direction: column; /* 纵向排列 */
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin: 10px auto; /* 水平居中 */
+  max-width: 100%;
+  background-color: #f9f9f9; /* 淡灰色背景 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  border-radius: 12px; /* 圆角 */
+  transition: transform 0.2s; /* 动画效果 */
+}
+
+.section:hover {
+  transform: scale(1.02); /* 放大效果 */
+}
+
+.image-container，.text-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  flex: 1; /* 使容器平分空间 */
+  margin: 10px; /* 添加间距 */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s; /* 动画效果 */
+}
+
+.image-container img:hover {
+  transform: scale(1.05); /* 放大效果 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.text-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 5px;
+}
+
+.text-container p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row; /* 横向布局 */
+    justify-content: center; /* 居中对齐 */
+  }
+  .image-container, .text-container {
+    flex: 1;
+    margin: 10px;
+  }
+}

@@ -1,0 +1,14 @@
+/* DancingTrees.module.css */
+.canvasContainer {
+    background-color: transparent;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  display: block;
+  margin: auto;
+}

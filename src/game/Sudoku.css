@@ -1,0 +1,96 @@
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden; /* 确保内容不会溢出 */
+    min-width: max-content;
+}
+
+#sudoku-board {
+    border-collapse: collapse;
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+#sudoku-board td {
+    width: calc(100% / 9);
+    height: 50px;
+    text-align: center;
+    border: 1px solid #252424;
+    font-size: 1.5em;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sudoku-board td span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    font-size: 1.5em;
+}
+
+#sudoku-board td.fixed {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    cursor: default;
+}
+
+#sudoku-board td:hover:not(.fixed) {
+    background-color: #f0f8ff;
+}
+
+#sudoku-board td:nth-child(3n+1) {
+    border-left: 2px solid #000;
+}
+
+#sudoku-board td:nth-child(3n) {
+    border-right: 2px solid #000;
+}
+
+#sudoku-board tr:nth-child(3n+1) td {
+    border-top: 2px solid #000;
+}
+
+#sudoku-board tr:nth-child(3n) td {
+    border-bottom: 2px solid #000;
+}
+
+.number-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.number-buttons button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color:  #59ba42;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.number-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+.number-buttons button:active {
+    background-color: #ddd;
+    transform: scale(0.95);
+}
+
+#sudoku-board td.selected {
+    background-color: #cce5ff; /* 高亮背景颜色 */
+    border-color: #0056b3; /* 高亮边框颜色 */
+}

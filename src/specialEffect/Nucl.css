@@ -1,0 +1,62 @@
+/* 根变量和全局样式 */
+
+  .Nucl-label {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid;
+    padding: .7rem 1.2rem;
+    border-radius: .35rem;
+    transition: .1s ease;
+  }
+  
+  /* 核心动画和元素样式 */
+  .Nucl-nucl {
+    position: relative;
+    width: 3vmin;
+    height: 3vmin;
+    background: 
+      radial-gradient(circle, #0000FF 50%, #0000 0) 50% 50% / 60% 60% space,
+      radial-gradient(circle, #00FF00 50%, #0000 0) 50% 15% / 60% 40% space,
+      radial-gradient(circle, #FF00FF 50%, #0000 0) 50% 50% / 50% 90% space,
+      radial-gradient(circle, #0000FF 50%, #0000 0) 0 0 / 45% 45% space;
+    animation: Nucl-turn 60s linear infinite forwards;
+    --clr: #AEE1CD;  /* 样式变量 */
+    --ad: 2s;       /* 动画持续时间 */
+  }
+  
+  .Nucl-ele {
+    width: 30vmin;
+    height: 6vmin;
+    border-radius: 100%;
+    border: 1px dashed color-mix(in lab, var(--clr), #0005 50%);
+    position: absolute;
+    transform: translate(-13.5vmin, -1.5vmin) rotate(var(--r));
+    z-index: 1;
+  }
+  
+  .Nucl-dot {
+    background-color: var(--clr);
+    width: 1.5vmin;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 100%;
+    offset-path: border-box;
+    offset-distance: 0%;
+    animation: Nucl-rot linear var(--ad) infinite forwards;
+    z-index: 5;
+  }
+  
+  /* 关键帧动画定义 */
+  @keyframes Nucl-turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes Nucl-rot {
+    to {
+      offset-distance: 100%;
+    }
+  }

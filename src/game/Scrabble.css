@@ -1,0 +1,59 @@
+.scrabble-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.scrabble-container .board {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 10px;
+    margin: 20px;
+}
+
+.scrabble-container .cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.scrabble-container .letters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.scrabble-container .letter {
+    width: 60px;
+    height: 60px;
+    background-color: #8ad4ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: grab;
+    border-radius: 10px;
+}
+
+.scrabble-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Light blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.scrabble-container .reset-button {
+    background-color: #ff6347; /* Tomato color for visibility */
+    margin-top: 20px;
+}

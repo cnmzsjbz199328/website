@@ -1,0 +1,23 @@
+.magnifier {
+  position: fixed;
+  width: 150px; /* Size of the magnifying area */
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+  pointer-events: none; /* Make sure it doesn't interfere with other mouse events */
+  background: rgba(255,255,255,0.4); /* Slightly see-through */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.magnifier::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  transform: scale(2);
+  transform-origin: center center;
+  background: inherit;
+}
