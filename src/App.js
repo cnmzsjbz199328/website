@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './components/Home';
 import AboutUs from './aboutUs/AboutUS';
 import Services from './services/Services';
 import Activities from './activities/Activities';
@@ -25,8 +24,7 @@ function App() {
       <BubbleBackground /> 
         <Navbar />
         <Routes>
-          <Route index element={<ErrorBoundary><Home /></ErrorBoundary>} />
-          <Route path="/components" element={<ErrorBoundary><Home /></ErrorBoundary>} />
+          <Route index element={<ErrorBoundary><AboutUs /></ErrorBoundary>} />
           <Route path="/aboutUs" element={<ErrorBoundary><AboutUs /></ErrorBoundary>} />
           <Route path="/services" element={<ErrorBoundary><Services /></ErrorBoundary>} />
           <Route path="/activities" element={<ErrorBoundary><Activities /></ErrorBoundary>} />

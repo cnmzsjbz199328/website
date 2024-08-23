@@ -1,13 +1,13 @@
 import React from 'react';
 import './Section.css';
-import Page from '../components/Page'; // 更新路径
+import Post from '../components/Post'; // 更新路径
 
-function Section({pageId}) {
+function Section({postId}) {
 
     return (
         <div>
             <div >
-            <Page pageId={pageId} />
+            <Post postId={postId} />
             </div>
         </div>
     );

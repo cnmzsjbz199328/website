@@ -9,7 +9,6 @@ const Navbar = () => {
     <nav className="navbar">
       <Logo postLogoId ={14}/>
       <ul className="navbar-menu">
-        <li><Link to="/components">Home</Link></li>
         <li><Link to="/aboutUs">About Us</Link></li>
         <li><Link to="/services">Services</Link></li>
         <li><Link to="/activities">Activities</Link></li>
