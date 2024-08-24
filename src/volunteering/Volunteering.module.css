@@ -1,0 +1,18 @@
+.Volunteering-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: left; /* 确保文字向左对齐 */
+}
+
+.Volunteering-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-container {
+  margin-bottom: 20px;
+}
+
+.story-container {
+  margin-top: 40px;
+}
