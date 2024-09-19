@@ -36,32 +36,32 @@ function ExternalServices() {
                 </div>
                 <SwipeableViews index={index} onChangeIndex={handleChangeIndex} className='swipeable-views'>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={57}>
+                        <SectionTextLeft postIdtext={15}>
                             <span>Southern Volunteering Content</span>
                         </SectionTextLeft>
                     </div>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={59}>
+                        <SectionTextLeft postIdtext={16}>
                             <span>Junction Australia Content</span>
                         </SectionTextLeft>
                     </div>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={61}>
+                        <SectionTextLeft postIdtext={17}>
                             <span>Mary Bywaters Memorial Kindergarten Content</span>
                         </SectionTextLeft>
                     </div>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={63}>
+                        <SectionTextLeft postIdtext={18}>
                             <span>atWork Australia Content</span>
                         </SectionTextLeft>
                     </div>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={67}>
+                        <SectionTextLeft postIdtext={19}>
                             <span>Mental Health Triage Service Content</span>
                         </SectionTextLeft>
                     </div>
                     <div className='service-item'>
-                        <SectionTextLeft postIdtext={69}>
+                        <SectionTextLeft postIdtext={20}>
                             <span>City of Onkaparinga Content</span>
                         </SectionTextLeft>
                     </div>

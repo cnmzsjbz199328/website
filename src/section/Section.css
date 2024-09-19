@@ -4,12 +4,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border: 1px solid #ddd;
   margin: 10px auto; /* 水平居中 */
   max-width: 100%;
   background-color: #f9f9f9; /* 淡灰色背景 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-  border-radius: 12px; /* 圆角 */
   transition: transform 0.2s; /* 动画效果 */
 }
 

@@ -34,7 +34,7 @@ function InternalServices() {
             </div>
             <SwipeableViews index={index} onChangeIndex={handleChangeIndex}>
                 <div className='service-item'>
-                    <SectionTextRight postIdtext={48}>
+                    <SectionTextRight postIdtext={11}>
                         <FaBook className='service-icon' />
                         <FaPlus className='service-icon' />
                         <FaRecycle className='service-icon' />
@@ -44,7 +44,7 @@ function InternalServices() {
                     </SectionTextRight>
                 </div>
                 <div className='service-item'>
-                    <SectionTextRight postIdtext={51}>
+                    <SectionTextRight postIdtext={12}>
                         <FaMobileAlt className='service-icon' />
                         <FaPlus className='service-icon' />
                         <FaRecycle className='service-icon' />
@@ -54,7 +54,7 @@ function InternalServices() {
                     </SectionTextRight>
                 </div>
                 <div className='service-item'>
-                    <SectionTextRight postIdtext={53}>
+                    <SectionTextRight postIdtext={13}>
                         <FaEye className='service-icon' />
                         <FaPlus className='service-icon' />
                         <FaClipboard className='service-icon' />
@@ -63,7 +63,7 @@ function InternalServices() {
                     </SectionTextRight>
                 </div>
                 <div className='service-item'>
-                    <SectionTextRight postIdtext={55}>
+                    <SectionTextRight postIdtext={14}>
                         <FaGavel className='service-icon' />
                         <FaPlus className='service-icon' />
                         

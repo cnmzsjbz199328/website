@@ -1,13 +1,7 @@
 .about-us-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  text-align: left; /* 确保文字向左对齐 */
 }
 
 .about-us-content {
@@ -29,49 +23,7 @@
 }
 
 .section-container {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.story-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
-
-.nav-buttons-vertical {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  justify-content: flex-end;
-}
-
-.icon-button {
-    background: linear-gradient(to left, #79cec8, #f2ba4e);
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 150px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 26px;
-}
-
-.icon-button:hover {
-  background-color: #f0f0f0;
-}
-
-.swipeable-views {
-  flex: 1;
-}
-
-.activity-item {
-  padding: 20px;
-}
-
-.special-effect {
-  font-weight: bold;
-  color: #007bff;
+  margin-bottom: 20px;
 }
 
 .story-container {

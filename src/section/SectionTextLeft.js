@@ -4,6 +4,7 @@ import Post from '../components/Post';
 import TextToSpeech from '../textToSpeech/TextToSpeech';
 import Sudoku from '../game/Sudoku';
 import Scrabble from '../game/Scrabble'; 
+import TowersOfHanoi from '../game/TowersOfHanoi';
 
 function SectionTextLeft({ postIdtext }) {
     const [textForSpeech, setTextForSpeech] = useState('');
@@ -18,7 +19,7 @@ function SectionTextLeft({ postIdtext }) {
 
     // 随机选择游戏
     useEffect(() => {
-        const games = [<Sudoku key="sudoku" />, <Scrabble key="scrabble" />];
+        const games = [<Sudoku key="sudoku" />, <Scrabble key="scrabble" />, <TowersOfHanoi key="towersOfHanoi" />];
         const randomGame = games[Math.floor(Math.random() * games.length)];
         setSelectedGame(randomGame);
     }, []);

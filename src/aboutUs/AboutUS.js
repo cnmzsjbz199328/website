@@ -7,22 +7,22 @@ function AboutUs() {
   return (
     <div className={styles['about-us-container']}>
       <div className={styles['about-us-content']}>
-        <h1>About Us</h1>
-        <p>Learn more about who we are and what we do.</p>
+
         <div className={styles['section-container']}>
-          <SectionPictureLeft postIdphoto={1} postIdtext={37} />
+          <SectionPictureLeft postIdphoto={2} postIdtext={3} />
         </div>
         <div className={styles['section-container']}>
-          <SectionPictureLeft postIdphoto={215} postIdtext={39} />
+          <SectionPictureLeft postIdphoto={4} postIdtext={5} />
         </div>
         <div className={styles['section-container']}>
-          <SectionPictureLeft postIdphoto={222} postIdtext={41} />
+          <SectionPictureLeft postIdphoto={6} postIdtext={7} />
         </div>
+
         <h1>Our Story</h1>
         <div className={styles['story-container']}>
-          <Section postId={46} />
-          <Section postId={230} />
-          <Section postId={233} />
+          <Section postId={8} />
+          <Section postId={9} />
+          <Section postId={10} />
         </div>
       </div>
     </div>

@@ -8,9 +8,11 @@ import Activities from './activities/Activities';
 import Volunteering from './volunteering/Volunteering';
 import Contact from './contact/Contact';
 import VenueHire from './venueHire/VenueHire';
+import AdminPanel from './admin/AdminPanel'; // 引入 AdminPanel 组件
 import './App.css';
 import ErrorBoundary from './ErrorBoundary';
 import BubbleBackground from './specialEffect/BubbleBackground'; // 引入新组件
+
 /**
  * 定义应用程序的主组件App。
  * 
@@ -21,7 +23,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <BubbleBackground /> 
+        <BubbleBackground /> 
         <Navbar />
         <Routes>
           <Route index element={<ErrorBoundary><AboutUs /></ErrorBoundary>} />
@@ -31,6 +33,7 @@ function App() {
           <Route path="/venueHire" element={<ErrorBoundary><VenueHire /></ErrorBoundary>} />
           <Route path="/volunteering" element={<ErrorBoundary><Volunteering /></ErrorBoundary>} />
           <Route path="/contact" element={<ErrorBoundary><Contact /></ErrorBoundary>} />
+          <Route path="/admin" element={<ErrorBoundary><AdminPanel /></ErrorBoundary>} /> {/* 添加 AdminPanel 路由 */}
         </Routes>
         <Footer />
       </div>

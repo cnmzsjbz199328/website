@@ -1,6 +1,8 @@
 /* EmailForm.css */
 
 .email-container{
+    width: 80%;
+    margin: 10px auto; /* 水平居中 */
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 10px;
