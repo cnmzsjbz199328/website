@@ -12,7 +12,7 @@ function ExternalServices() {
 
     return (
         <div className='services-container'>
-            <h2>External Services</h2>
+            <div className='service-title'>External Services</div>
             <div className='content'>
                 <div className='nav-buttons-vertical'>
                     <button onClick={() => handleChangeIndex(0)} className='icon-button'>

@@ -2,7 +2,6 @@
 .canvasContainer {
     background-color: transparent;
   display: flex;
-  height: 100vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;

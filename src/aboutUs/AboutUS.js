@@ -18,7 +18,7 @@ function AboutUs() {
           <SectionPictureLeft postIdphoto={6} postIdtext={7} />
         </div>
 
-        <h1>Our Story</h1>
+        <div className={styles['AboutUs-title']}>Our Story</div>
         <div className={styles['story-container']}>
           <Section postId={8} />
           <Section postId={9} />

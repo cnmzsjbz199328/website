@@ -21,25 +21,27 @@
 }
 
 .nav-buttons-vertical {
+    position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-right: 20px;
 }
 
 .nav-buttons-vertical button {
-    margin: 10px 0;
-    padding: 10px 20px;
+    margin: 30px 0;
+    padding: 10px;
     cursor: pointer;
-    background-color: #007bff;
+    background: linear-gradient(to left, #79cec8, #f2ba4e);
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: x-large;
     transition: background-color 0.3s;
 }
 
 .nav-buttons-vertical button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to left, #f2ba4e, #79cec8);
 }
 
 .icon-button {
@@ -62,9 +64,19 @@
 }
 
 .activity-item {
+    margin-left: 300px;
     display: flex;
     overflow-x: auto; /* 允许水平滚动 */
     overflow-y: hidden; /* 禁止垂直滚动 */
     padding: 10px; /* 内边距 */
     box-sizing: border-box; 
+}
+
+.activity-title {
+    font-size: 2.5em;
+    font-family: 'Cursive', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影特效 */
 }

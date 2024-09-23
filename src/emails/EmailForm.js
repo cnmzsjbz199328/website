@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './EmailForm.css';
+import config from '../config'; // 假设 config.js 文件包含 API_BASE_URL
 
 function EmailForm() {
     const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ function EmailForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // 在这里处理表单提交逻辑，例如发送电子邮件
-        fetch('http://localhost/wordpress/wp-json/custom-form/v1/submit', {
+        fetch(`${config.API_BASE_URL}/setEmail.php`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

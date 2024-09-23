@@ -8,21 +8,21 @@ function Volunteering() {
         <div className={styles['Volunteering-container']}>
             <div className={styles['Volunteering-content']}>
                 <div className={styles['section-container']}>
-                    <SectionPictureLeft postIdphoto={54} postIdtext={55} />
+                    <SectionPictureLeft postIdphoto={51} postIdtext={52} />
                 </div>
                 <div className={styles['section-container']}>
-                    <SectionPictureRight postIdphoto={56} postIdtext={57} />
+                    <SectionPictureRight postIdphoto={53} postIdtext={54} />
                 </div>
 
-                <h1>Some stories from our volunteers</h1>
+                 <div className={styles['title']}>Some stories from our volunteers</div>
                 <div className={styles['Story-content']}>
-                    <SectionPictureLeft postIdphoto={58} postIdtext={59} />
+                    <SectionPictureLeft postIdphoto={55} postIdtext={56} />
                 </div>
                 <div className={styles['section-container']}>
-                    <SectionPictureRight postIdphoto={60} postIdtext={61} />
+                    <SectionPictureRight postIdphoto={57} postIdtext={58} />
                 </div>
                 <div className={styles['section-container']}>
-                    <SectionPictureLeft postIdphoto={62} postIdtext={63} />
+                    <SectionPictureLeft postIdphoto={59} postIdtext={60} />
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import ExternalServices from './ExternalServices';
 
 function Services() {
     return (
-        <div>
+        <div class="container" >               
             <InternalServices />
             <ExternalServices />
         </div>

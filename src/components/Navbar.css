@@ -3,7 +3,7 @@
   align-items: center;
   padding: 10px;
   background: linear-gradient(to left, #79cec8, #f2ba4e);
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .navbar-menu {

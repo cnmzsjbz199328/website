@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Section.css';
-import Post from '../components/Post'; // 更新路径
+import Post from '../components/Post';
 import TextToSpeech from '../textToSpeech/TextToSpeech';
 
 function SectionPictureRight({ postIdtext, postIdphoto }) {
@@ -8,7 +8,6 @@ function SectionPictureRight({ postIdtext, postIdphoto }) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    // 用于接收 Post 组件传递的内容
     const handleContentLoaded = (content) => {
         setTextForSpeech(content);
     };

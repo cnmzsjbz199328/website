@@ -53,3 +53,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
   text-align: left; /* 文字居中向左靠齐 */
 }
+
+.AboutUs-title{
+  font-size: 2.5em;
+  font-family: 'Cursive', sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影特效 */
+}

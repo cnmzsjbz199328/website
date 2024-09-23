@@ -13,7 +13,7 @@ function InternalServices() {
 
     return (
         <div className='services-container'>
-            <h2>Internal Services</h2>
+            <div className='service-title'>Internal Services</div>
             <div className='nav-buttons'>
                 <button onClick={() => handleChangeIndex(0)} className='icon-button'>
                     <FaBook />

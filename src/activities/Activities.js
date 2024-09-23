@@ -1,80 +1,79 @@
 import React from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import styles from '../activities/Activities.module.css';
-import SectionTextRight from '../section/SectionTextRight';
+import Section from '../section/Section';
 import OpArtEffect from '../specialEffect/OpArtEffect';
 import DancingTrees from '../specialEffect/DancingTrees';
 import Nucl from '../specialEffect/Nucl';
-import Section from '../section/Section';
 
 function Activities() {
-    const [index, setIndex] = React.useState(0);
-
-    const handleChangeIndex = (index) => {
-        setIndex(index);
-    };
-
     return (
         <div className={styles['activities-container']}>
             <div className={styles['content']}>
                 <div className={styles['nav-buttons-vertical']}>
-                    <button onClick={() => handleChangeIndex(0)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('hobbies').scrollIntoView()} className={styles['icon-button']}>
                         <span>Hobbies</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(1)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('exercises').scrollIntoView()} className={styles['icon-button']}>
                         <span>Exercises</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(2)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('kids').scrollIntoView()} className={styles['icon-button']}>
                         <span>For the Kids</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(3)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('technical-help').scrollIntoView()} className={styles['icon-button']}>
                         <span>Technical Help</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(4)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('community-projects').scrollIntoView()} className={styles['icon-button']}>
                         <span>Community Projects</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(5)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('education-services').scrollIntoView()} className={styles['icon-button']}>
                         <span>Education and Services</span>
                     </button>
-                    <button onClick={() => handleChangeIndex(6)} className={styles['icon-button']}>
+                    <button onClick={() => document.getElementById('special-interest').scrollIntoView()} className={styles['icon-button']}>
                         <span>Special Interest</span>
                     </button>
                 </div>
-                <SwipeableViews index={index} onChangeIndex={handleChangeIndex} className={styles['swipeable-views']}>
-                    <div className={styles['activity-item']}>
-                    <Section postId={21} />
-                    <Section postId={22} />
-                    <Section postId={23} />
+                <div>
+                    <h2 className={styles['activity-title']}>Hobbies</h2>
+                    <div className={styles['activity-item']} id="hobbies">
+                        <Section postId={21} />
+                        <Section postId={22} />
+                        <Section postId={23} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={24} />
-                    <Section postId={25} />
-                    <Section postId={26} />
+                    <h2 className={styles['activity-title']}>Exercises</h2>
+                    <div className={styles['activity-item']} id="exercises">
+                        <Section postId={24} />
+                        <DancingTrees />
+                        <Section postId={25} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={27} />
-                    <Section postId={28} />
-                    <Section postId={29} />
+                    <h2 className={styles['activity-title']}>For the Kids</h2>
+                    <div className={styles['activity-item']} id="kids">
+                        <Section postId={26} />
+                        <Section postId={27} />
+                        <Section postId={28} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={30} />
+                    <h2 className={styles['activity-title']}>Technical Help</h2>
+                    <div className={styles['activity-item']} id="technical-help">
+                        <Section postId={29} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={31} />
-                    <Section postId={32} />
-                    <Section postId={33} />
+                    <h2 className={styles['activity-title']}>Community Projects</h2>
+                    <div className={styles['activity-item']} id="community-projects">
+                        <Section postId={30} />
+                        <Section postId={31} />
+                        <Section postId={32} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={34} />
-                    <Section postId={35} />
-                    <Section postId={36} />
+                    <h2 className={styles['activity-title']}>Education and Services</h2>
+                    <div className={styles['activity-item']} id="education-services">
+                        <Section postId={33} />
+                        <Section postId={34} />
+                        <Section postId={35} />
                     </div>
-                    <div className={styles['activity-item']}>
-                    <Section postId={37} />
-                    <Section postId={38} />
-                    <Section postId={39} />
+                    <h2 className={styles['activity-title']}>Special Interest</h2>
+                    <div className={styles['activity-item']} id="special-interest">
+                        <Section postId={36} />
+                        <Section postId={37} />
+                        <Section postId={38} />
                     </div>
-                </SwipeableViews>
+                </div>
             </div>
         </div>
     );

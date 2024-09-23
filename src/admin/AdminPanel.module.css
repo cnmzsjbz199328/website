@@ -1,11 +1,59 @@
-.admin-panel {
-    padding: 20px;
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 60px 20px 20px 20px;
 }
 
-.post-container {
+.admin-table th,
+.admin-table td {
+    border: 3px solid #ccc;
+    padding: 8px;
+    width: 300px;
+    height: 150px;
+}
+
+.admin-table th {
+    background-color: #f4f4f4;
+    height: 50px; /* 调整标题行高度 */
+}
+
+.admin-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.admin-table input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+}
+
+.admin-table textarea {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.admin-table button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-table button:hover {
+    background-color: #0056b3;
+}
+
+.post-image {
+    border: dotted;
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+    margin-top: 5px;
 }
 
 .form-group {
@@ -16,30 +64,100 @@
 
 textarea {
     resize: vertical;
-    height: auto;
-    min-height: 50px; /* You can adjust this value as needed */
+    min-height: 50px; /* Adjustable based on content visibility */
     overflow: hidden;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
+/* AdminPanel.module.css */
+.navbar {
+    margin: 20px 0 0 20px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#65f1ff;
+    padding: 10px;
     color: white;
-    border: none;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.email-table-container {
+    margin: 0 20px 0 20px;
+  }
+  
+.email-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .email-table th, .email-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .email-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+
+  .email-table-header {
+    width: fit-content;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#65f1ff;
+    padding: 10px;
+    color: white;
+  }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .admin-table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .admin-table thead {
+        display: none;
+    }
+
+    .admin-table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .admin-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        position: relative;
+    }
+
+    .admin-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex: 1;
+    }
+
+    .admin-table td:last-child {
+        text-align: right;
+    }
 }

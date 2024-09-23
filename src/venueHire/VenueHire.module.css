@@ -43,3 +43,25 @@
 .icon-button:hover {
     background: linear-gradient(to left, #f2ba4e, #79cec8);
 }
+
+.sub-title {
+    font-size: 2em;
+    font-family: 'Cursive', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+.title {
+    background-color: #f0f8ff;
+    border: 2px solid #f0f8ff;
+    border-radius: 10px;
+    /* border: ridge; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-top: 20px;
+    font-size: 4em;
+    font-family: 'Cursive', sans-serif;
+    color: #aad366;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
