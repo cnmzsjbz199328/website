@@ -94,3 +94,21 @@
     background-color: #cce5ff; /* 高亮背景颜色 */
     border-color: #0056b3; /* 高亮边框颜色 */
 }
+
+@media (max-width: 768px) {
+    .number-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+        gap: 10px; /* 可选：添加子元素之间的间距 */
+    }
+    
+    .number-buttons button {
+        text-align: center; /* 子元素内容居中 */
+    }
+
+    .sudoku-container {
+        min-width: fit-content;
+    }
+}

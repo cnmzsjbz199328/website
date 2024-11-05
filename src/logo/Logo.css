@@ -1,4 +1,5 @@
 .logo-container img {
-  height: 80px; /* Fixed height */
+  border-radius: 12px;
+  height: 150px;
   width: auto;
 }

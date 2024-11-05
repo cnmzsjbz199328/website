@@ -62,3 +62,25 @@
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影特效 */
 }
+
+@media (max-width: 768px) {
+  .story-container > * {
+    width: 100%;
+    flex: 0 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    word-wrap: break-word; /* 确保长单词换行 */
+    overflow-wrap: break-word; /* 确保长单词换行 */
+    text-overflow: ellipsis; /* 溢出文本显示省略号 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    background: #fff; /* 子元素背景色 */
+    padding: 10px; /* 子元素内边距 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 子元素阴影 */
+    border: 2px solid #ccc; /* 边框 */
+    border-radius: 10px; /* 圆角 */
+    background: linear-gradient(135deg, #f3f3f3, #e2e2e2); /* 渐变背景 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    text-align: left; /* 文字居中向左靠齐 */
+  }
+  
+}

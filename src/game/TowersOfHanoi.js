@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './TowersOfHanoi.css';
 
 const TowersOfHanoi = () => {
     const [numDisks, setNumDisks] = useState(3); // 默认盘子数量为3
     const [towers, setTowers] = useState([Array.from({ length: numDisks }, (_, i) => numDisks - i), [], []]);
     const [draggedDisk, setDraggedDisk] = useState(null);
+    const draggedDiskRef = useRef(null);
 
     const handleNumDisksChange = (e) => {
         const newNumDisks = parseInt(e.target.value, 10);
@@ -16,6 +17,7 @@ const TowersOfHanoi = () => {
         const tower = towers[towerIndex];
         if (tower[tower.length - 1] === disk) { // 只有最上层的盘子可以被拖动
             setDraggedDisk({ disk, towerIndex });
+            draggedDiskRef.current = { disk, towerIndex };
         }
     };
 
@@ -34,8 +36,30 @@ const TowersOfHanoi = () => {
                 });
                 setTowers(newTowers);
                 setDraggedDisk(null);
+                draggedDiskRef.current = null;
             }
         }
+    };
+
+    const handleTouchStart = (e, disk, towerIndex) => {
+        e.preventDefault();
+        handleDragStart(disk, towerIndex);
+    };
+
+    const handleTouchMove = (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (element && element.classList.contains('tower')) {
+            const towerIndex = parseInt(element.getAttribute('data-index'), 10);
+            handleDrop(towerIndex);
+        }
+    };
+
+    const handleTouchEnd = (e) => {
+        e.preventDefault();
+        setDraggedDisk(null);
+        draggedDiskRef.current = null;
     };
 
     const isValidMove = (disk, towerIndex) => {
@@ -54,8 +78,11 @@ const TowersOfHanoi = () => {
                     <div
                         key={towerIndex}
                         className="tower"
+                        data-index={towerIndex}
                         onDragOver={(e) => e.preventDefault()}
                         onDrop={() => handleDrop(towerIndex)}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         <div className="rod"></div> {/* 添加杆子 */}
                         {tower.map((disk, diskIndex) => (
@@ -64,6 +91,7 @@ const TowersOfHanoi = () => {
                                 className="disk"
                                 draggable={diskIndex === tower.length - 1} // 只有最上层的盘子可以被拖动
                                 onDragStart={() => handleDragStart(disk, towerIndex)}
+                                onTouchStart={(e) => handleTouchStart(e, disk, towerIndex)}
                                 style={{ width: `${(disk / numDisks) * 100}%`, height: '30px', marginBottom: '5px' }} // 动态计算盘子的宽度
                             >
                                 {disk}
@@ -71,9 +99,8 @@ const TowersOfHanoi = () => {
                         ))}
                     </div>
                 ))}
-              
             </div>
-           <div className="disk-input-container">
+            <div className="disk-input-container">
                 <label htmlFor="numDisks">Number of Disks: </label>
                 <input
                     id="numDisks"
@@ -82,7 +109,7 @@ const TowersOfHanoi = () => {
                     value={numDisks}
                     onChange={handleNumDisksChange}
                 />
-            </div>   
+            </div>
         </div>
     );
 };

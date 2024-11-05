@@ -46,3 +46,13 @@
   margin-top: 10px;
   color: #333;
 }
+
+@media (max-width: 768px) {
+  .map-container {
+    margin-right: 0;
+  }
+
+  .address-container {
+    flex-direction: column-reverse;
+  }
+}

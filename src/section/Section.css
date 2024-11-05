@@ -60,10 +60,10 @@
   line-height: 1.6;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .section {
-    flex-direction: row; /* 横向布局 */
-    justify-content: center; /* 居中对齐 */
+    padding: 0;
+    margin: 0;
   }
   .image-container, .text-container {
     flex: 1;

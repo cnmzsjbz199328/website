@@ -123,7 +123,6 @@
 }
 .content {
   display: flex;
-
   text-align: left;
 }
 .service-title {
@@ -133,4 +132,60 @@
     margin-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    margin-bottom: 0;
+    padding: 0;
+    }
+
+    .nav-buttons button {
+        margin: 9px;
+        padding: 0;
+    }
+
+    .icon-button svg {
+        font-size: 4em; /* 调整图标大小 */
+    }
+    
+    .icon-button span {
+        font-size: 0.6em;
+    }
+
+    .nav-buttons {
+        margin-bottom: 0px;
+    }
+
+    .service-icon {
+        font-size: 3em;
+    }
+
+    .text-container {
+        padding: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+      }
+
+    .nav-buttons-vertical {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; /* 等分间距 */
+        margin-right: 0;
+        flex: 1; /* 每个元素占据的空间一样 */
+        }
+
+      .nav-buttons-vertical button {
+        margin: 0 10px 0 10px;
+        padding: 1.5px;
+      }
+      .container{
+        margin: 0;
+    }
+    .empty-container {
+        margin-right: 0;
+    }
 }

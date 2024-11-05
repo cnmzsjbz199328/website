@@ -80,3 +80,17 @@
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影特效 */
 }
+
+@media (max-width: 768px) {
+
+    .activity-item {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .nav-buttons-vertical button {
+        margin: 5px 0;
+        padding: 1px;
+        background: linear-gradient(to left, #79cec800, #f2ba4e);
+    }
+}

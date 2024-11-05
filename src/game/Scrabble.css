@@ -57,3 +57,15 @@
     background-color: #ff6347; /* Tomato color for visibility */
     margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+    .scrabble-container .letters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; /* 如果需要垂直居中 */
+    }
+    .scrabble-container .letter {
+        margin: 1px;
+    }
+}

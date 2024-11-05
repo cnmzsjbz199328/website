@@ -103,3 +103,20 @@
     margin-top: 20px;
     font-weight: bold;
   }
+
+  @media (max-width: 768px) {
+    .instruction-message {
+      font-size: 16px;
+      color: #2980b9;
+      margin-top: 0;
+    }
+    .tower {
+      width: 130px; /* 增加塔的宽度 */
+    }
+    .towers-of-hanoi {
+      padding: 0;
+  }
+  .towers {
+    margin-bottom: 20px;
+  }
+  }

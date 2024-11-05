@@ -71,3 +71,10 @@
 .submit-button:hover {
     background-color: #808080;
 }
+
+@media (max-width: 768px) {
+    .email-form-container {
+        padding: 10px;
+        box-shadow: none; 
+    }
+}

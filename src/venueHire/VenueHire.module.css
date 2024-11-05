@@ -65,3 +65,23 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     justify-content: center;
 }
+
+@media (max-width: 768px) {
+    .venuehire-container {
+        padding: 0;
+        margin: 0; /* 外边距 */
+
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .sub-title {
+        font-size: 1em;
+    }
+
+    .venuehire-content {
+        width: 95%;
+    }
+}
