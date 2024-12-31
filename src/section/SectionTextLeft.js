@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Section.css';
+import styles from './Section.module.css';
 import Post from '../components/Post';
 import TextToSpeech from '../textToSpeech/TextToSpeech';
 import Sudoku from '../game/Sudoku';
@@ -12,12 +12,10 @@ function SectionTextLeft({ postIdtext }) {
     const [error, setError] = useState(null);
     const [selectedGame, setSelectedGame] = useState(null);
 
-    // 用于接收 Post 组件传递的内容
     const handleContentLoaded = (content) => {
         setTextForSpeech(content);
     };
 
-    // 随机选择游戏
     useEffect(() => {
         const games = [<Sudoku key="sudoku" />, <Scrabble key="scrabble" />, <TowersOfHanoi key="towersOfHanoi" />];
         const randomGame = games[Math.floor(Math.random() * games.length)];
@@ -25,13 +23,12 @@ function SectionTextLeft({ postIdtext }) {
     }, []);
 
     return (
-        <div className='section'>
-            <div className="text-container">
+        <div className={styles.section}>
+            <div className={styles['text-container']}>
                 <Post postId={postIdtext} onContentLoaded={handleContentLoaded} />
                 <TextToSpeech text={textForSpeech} />
             </div>
-            <div className="empty-container">
-                {/* 随机选择的游戏 */}
+            <div className={styles['empty-container']}>
                 {selectedGame}
             </div>
         </div>

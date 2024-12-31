@@ -1,5 +1,5 @@
 import React from 'react';
-import './Section.css';
+import styles from './Section.module.css';
 import Post from '../components/Post'; // 更新路径
 
 function Section({postId}) {

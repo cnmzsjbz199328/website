@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Section.css';
+import styles from './Section.module.css';
 import Post from '../components/Post';
 import TextToSpeech from '../textToSpeech/TextToSpeech';
 
@@ -13,12 +13,12 @@ function SectionPictureRight({ postIdtext, postIdphoto }) {
     };
 
     return (
-        <div className='section'>
-            <div className="text-container">
+        <div className={styles.section}>
+            <div className={styles['text-container']}>
                 <Post postId={postIdtext} onContentLoaded={handleContentLoaded} />
                 <TextToSpeech text={textForSpeech} />
             </div>
-            <div className="image-container">
+            <div className={styles['image-container']}>
                 <Post postId={postIdphoto} />
             </div>
         </div>
