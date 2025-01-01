@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supabase Content Test</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <style>
+        .content-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .content-image {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supabase Content List</h1>
+    <div id="content-list"></div>
+
+    <script>
+        const supabaseUrl = 'https://wsuwcjghpnzabneiqibb.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndzdXdjamdocG56YWJuZWlxaWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MTkxMjIsImV4cCI6MjA1MTE5NTEyMn0.ww0xjq_hcsbq4muuJPJ6E9DyWuC2SvNPmKGf7fgxFeU';
+        
+        const { createClient } = supabase;
+        const supabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+
+        async function fetchContent() {
+            try {
+                const { data, error } = await supabaseClient
+                    .from('content')
+                    .select('*');
+
+                if (error) throw error;
+
+                const contentList = document.getElementById('content-list');
+                contentList.innerHTML = data.map(item => `
+                    <div class="content-item">
+                        <h2>${item.title}</h2>
+                        <p>${item.content}</p>
+                        ${item.image ? `<img class="content-image" src="${item.image}" alt="${item.title}">` : ''}
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('content-list').innerHTML = 
+                    `<p style="color: red">Error loading content: ${error.message}</p>`;
+            }
+        }
+
+        fetchContent();
+    </script>
+</body>
+</html>

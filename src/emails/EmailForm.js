@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './EmailForm.css';
-import config from '../config'; // 假设 config.js 文件包含 API_BASE_URL
 
 function EmailForm() {
     const [formData, setFormData] = useState({
@@ -18,81 +17,29 @@ function EmailForm() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // 在这里处理表单提交逻辑，例如发送电子邮件
-        fetch(`${config.API_BASE_URL}/setEmail.php`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert('Form submitted successfully!');
-        })
-        .catch((error) => {
+        try {
+            const { error } = await window.supabaseClient
+                .from('emails')
+                .insert([formData]);
+
+            if (error) throw error;
+
+            alert('Message sent successfully!');
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
             console.error('Error:', error);
-            alert('Error submitting form');
-        });
-        console.log('Form data submitted:', formData);
+            alert('Error sending message');
+        }
     };
 
-    return (
-        <div className="email-container">
-            <div className="email-form-container">
-                <h2>Contact Us</h2>
-                <form onSubmit={handleSubmit} className="email-form">
-                    <div className="form-group">
-                        <label htmlFor="name">Your Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Your Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="subject">Subject</label>
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="message">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                        ></textarea>
-                    </div>
-                    <button type="submit" className="submit-button">Send a Message</button>
-                </form>
-            </div>
-        </div>
-    );
+    // ...existing code for return statement...
 }
 
 export default EmailForm;

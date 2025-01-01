@@ -1,13 +1,19 @@
 {
+  "root": true,
   "plugins": ["react-hooks"],
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
   "env": {
-      "browser": true,
-      "es6": true
-    },
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2018,

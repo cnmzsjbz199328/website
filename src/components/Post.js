@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import config from '../config';
+import supabase from '../supabaseClient';
 
 function Post({ postId, onContentLoaded }) {
     const [post, setPost] = useState(null);
@@ -8,18 +7,25 @@ function Post({ postId, onContentLoaded }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`${config.API_BASE_URL}/getPost.php?postId=${postId}`)
-            .then(response => {
-                setPost(response.data);
+        const fetchPost = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('content')
+                    .select('*')
+                    .eq('id', postId)
+                    .single();
+                if (error) throw error;
+                setPost(data);
                 setLoading(false);
                 if (onContentLoaded) {
-                    onContentLoaded(response.data.content);
+                    onContentLoaded(data.content);
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 setError('Error loading post');
                 setLoading(false);
-            });
+            }
+        };
+        fetchPost();
     }, [postId, onContentLoaded]);
 
     if (loading) return <div>Loading...</div>;

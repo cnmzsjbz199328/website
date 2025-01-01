@@ -12,6 +12,7 @@ import AdminPanel from './admin/AdminPanel'; // 引入 AdminPanel 组件
 import './App.css';
 import ErrorBoundary from './ErrorBoundary';
 import BubbleBackground from './specialEffect/BubbleBackground'; // 引入新组件
+import './supabaseClient'; // This loads first
 
 /**
  * 定义应用程序的主组件App。
