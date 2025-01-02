@@ -15,10 +15,16 @@ function Post({ postId, onContentLoaded }) {
                     .eq('id', postId)
                     .single();
                 if (error) throw error;
-                setPost(data);
+                // Decode Unicode escape sequences and replace \n with <br>
+                const decodedContent = data.content
+                    ? decodeURIComponent(JSON.parse(`"${data.content.replace(/\"/g, '\\"')}"`))
+                        .replace(/\n\n/g, '<br><br>')
+                        .replace(/\n/g, '<br>')
+                    : null; // 修改：确保 content 为 null 时不进行解码和替换
+                setPost({ ...data, content: decodedContent });
                 setLoading(false);
                 if (onContentLoaded) {
-                    onContentLoaded(data.content);
+                    onContentLoaded(decodedContent);
                 }
             } catch (error) {
                 setError('Error loading post');
@@ -35,11 +41,11 @@ function Post({ postId, onContentLoaded }) {
     return (
         <div className="post">
             {post.title && <h2>{post.title}</h2>}
-            {post.content && <p dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br>') }}></p>}
+            {post.content && <p dangerouslySetInnerHTML={{ __html: post.content }}></p>}
             {post.image && (
                 <img
                     src={post.image}
-                    alt={post.title || 'Post image'}
+                    alt={post.title || 'Post image'} // 修改：确保 alt 属性使用 post.title 或默认值
                     style={{ maxWidth: '100%' }}
                 />
             )}
