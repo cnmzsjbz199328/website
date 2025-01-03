@@ -10,4 +10,5 @@
 .canvas {
   display: block;
   margin: auto;
+  width:-webkit-fill-available;
 }

@@ -17,7 +17,18 @@ function AdminPanel() {
                     .select('*');
                 
                 if (error) throw error;
-                setPosts(data);
+
+                // 解码内容并替换换行符
+                const decodedData = data.map(post => ({
+                    ...post,
+                    content: post.content
+                        ? decodeURIComponent(JSON.parse(`"${post.content.replace(/\"/g, '\\"')}"`))
+                            .replace(/\n\n/g, '<br><br>')
+                            .replace(/\n/g, '<br>')
+                        : ''
+                }));
+
+                setPosts(decodedData);
                 setLoading(false);
             } catch (error) {
                 setError('Error loading posts');
@@ -48,6 +59,10 @@ function AdminPanel() {
             post.id === postId ? { ...post, [field]: value } : post
         );
         setPosts(updatedPosts);
+    };
+
+    const handleContentChange = (postId, html) => {
+        handleInputChange(postId, 'content', html);
     };
 
     const handleSubmit = async (postId) => {
@@ -217,9 +232,11 @@ function AdminPanel() {
                                 />
                             </td>
                             <td data-label="Content">
-                                <textarea
-                                    value={post.content || ''}
-                                    onChange={(e) => handleInputChange(post.id, 'content', e.target.value)}
+                                <div
+                                    contentEditable
+                                    className={styles['content-editable']}
+                                    dangerouslySetInnerHTML={{ __html: post.content || '' }}
+                                    onInput={(e) => handleContentChange(post.id, e.currentTarget.innerHTML)}
                                 />
                             </td>
                             <td data-label="Image">

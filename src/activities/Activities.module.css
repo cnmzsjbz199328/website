@@ -81,6 +81,14 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 添加阴影特效 */
 }
 
+/* 为图片设置明确的宽度和高度 */
+.activity-item img {
+   
+    height: 500px; /* 设置图片高度 */
+  
+    margin-right: 10px; /* 图片之间的间距 */
+}
+
 @media (max-width: 768px) {
 
     .activity-item {

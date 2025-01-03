@@ -56,6 +56,16 @@
     margin-top: 5px;
 }
 
+.content-editable {
+    border: 1px solid #ccc;
+    padding: 8px;
+    min-height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    text-align: left;
+}
+
 .form-group {
     margin-bottom: 10px;
     display: flex;

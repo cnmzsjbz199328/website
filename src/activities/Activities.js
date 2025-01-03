@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../activities/Activities.module.css';
 import Section from '../section/Section';
 import OpArtEffect from '../specialEffect/OpArtEffect';
-import DancingTrees from '../specialEffect/DancingTrees';
 import Nucl from '../specialEffect/Nucl';
 
 function Activities() {
@@ -42,7 +41,6 @@ function Activities() {
                     <h2 className={styles['activity-title']}>Exercises</h2>
                     <div className={styles['activity-item']} id="exercises">
                         <Section postId={24} />
-                        <DancingTrees />
                         <Section postId={25} />
                     </div>
                     <h2 className={styles['activity-title']}>For the Kids</h2>
