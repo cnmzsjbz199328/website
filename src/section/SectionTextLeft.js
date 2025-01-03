@@ -8,8 +8,6 @@ import TowersOfHanoi from '../game/TowersOfHanoi';
 
 function SectionTextLeft({ postIdtext }) {
     const [textForSpeech, setTextForSpeech] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     const [selectedGame, setSelectedGame] = useState(null);
 
     const handleContentLoaded = (content) => {

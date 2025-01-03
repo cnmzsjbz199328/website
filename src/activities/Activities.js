@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from '../activities/Activities.module.css';
 import Section from '../section/Section';
-import OpArtEffect from '../specialEffect/OpArtEffect';
-import Nucl from '../specialEffect/Nucl';
 
 function Activities() {
     return (

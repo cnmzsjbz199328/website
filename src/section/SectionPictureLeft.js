@@ -5,8 +5,7 @@ import TextToSpeech from '../textToSpeech/TextToSpeech';
 
 function SectionPictureLeft({ postIdphoto, postIdtext }) {
     const [textForSpeech, setTextForSpeech] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+
 
     const handleContentLoaded = (content) => {
         setTextForSpeech(content);

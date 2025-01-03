@@ -5,8 +5,6 @@ import TextToSpeech from '../textToSpeech/TextToSpeech';
 
 function SectionTextRight({ postIdtext, children }) {
     const [textForSpeech, setTextForSpeech] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
 
     const handleContentLoaded = (content) => {
         setTextForSpeech(content);
